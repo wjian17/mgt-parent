@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="NewPersistenceUnit">
+        <class>com.zxyh.mgt.jpa.pojo.BpTranControlPojo</class>
+        <class>com.zxyh.mgt.jpa.pojo.EapEntryCtrlPojo</class>
+        <properties>
+            <property name="toplink.jdbc.url" value="jdbc:db2://localhost:50000/sample"/>
+            <property name="toplink.jdbc.driver" value="com.ibm.db2.jcc.DB2Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:db2://localhost:50000/sample"/>
+            <property name="hibernate.connection.driver_class" value="com.ibm.db2.jcc.DB2Driver"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:db2://localhost:50000/sample"/>
+            <property name="openjpa.ConnectionDriverName" value="com.ibm.db2.jcc.DB2Driver"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:db2://localhost:50000/sample"/>
+            <property name="eclipselink.jdbc.driver" value="com.ibm.db2.jcc.DB2Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>

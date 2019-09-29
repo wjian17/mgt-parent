@@ -1,0 +1,43 @@
+
+#数据库配置
+spring:
+  aop:
+    proxy-target-class: true
+    auto: true
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    maxLifetime: 1765000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上
+    maximumPoolSize: 15
+    #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+    idleTimeout: 600000
+    url: jdbc:db2://localhost:50000/sample
+    username: db2admin
+    password: db2admin
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
+  jpa:
+    hibernate:
+     ddl-auto: validate
+     show-sql: true
+
+#    hibernate 自动减表方式有五个 (前提要把数据库建好)：
+#    update：表示自动根据model对象来更新表结构，启动 hibernate 时会自动检查数据库，如果缺少表则自动建表；缺少列则自动添加列；
+#    create： 启动hibernate时，自动删除原来的表，新建所有的表，所以每次启动后的以前数据都会丢失。
+#    create-drop：应用停下来的时候，自动会把表和数据删掉、
+#    none： 什么也不做；
+#    validate：会验证类里的属性和表字段是否一致，不一致，则会报错；
+
+
+
+#  profiles:
+#    active: dev #可设置使用哪个配置文件
+
+
+# Log 配置 级别大写 TRACE|DEBUG|INFO|WARN|ERROR
+logging:
+  level:
+    #root: INFO
+    com.zxyh.mgt.jpa: DEBUG
+  path: mgt-rest
+  config: classpath:logback.xml
+

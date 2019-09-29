@@ -1,0 +1,11 @@
+# Log 配置 级别大写 TRACE|DEBUG|INFO|WARN|ERROR
+logging:
+  level:
+    #root: INFO
+    com.zxyh.mgt.eureka: DEBUG
+  path: com.zxyh.mgt.eureka
+  config: classpath:logback.xml
+
+#spring:
+#  main:
+#    web-application-type: none
